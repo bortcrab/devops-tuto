@@ -1,0 +1,111 @@
+############################
+# ====== Node.js ======
+############################
+
+# Dependencias
+node_modules/
+jspm_packages/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build / dist
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+
+# Coverage
+coverage/
+*.lcov
+
+# Archivos de entorno
+.env
+.env.*
+!.env.example
+
+# NPM / Yarn / PNPM
+.npm/
+.yarn-integrity
+.pnpm-store/
+
+# Parcel / Vite / otros
+.parcel-cache/
+.vite/
+
+############################
+# ====== Python ======
+############################
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+ENV/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Tests / coverage
+.coverage
+.coverage.*
+.pytest_cache/
+htmlcov/
+.tox/
+.nox/
+
+# Jupyter
+.ipynb_checkpoints
+
+# mypy / pyright
+.mypy_cache/
+.pyright/
+.dmypy.json
+
+# Archivos de entorno
+.env
+.env.*
+
+############################
+# ====== General ======
+############################
+
+# IDEs / editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Otros
+pids
+*.pid
+*.seed
+*.pid.lock
+.node_repl_history
+.eslintcache
+*.tsbuildinfo
+
