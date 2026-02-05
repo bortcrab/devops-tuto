@@ -1,0 +1,44 @@
+services:
+  # 1. Base de datos
+  db:
+    image: postgres:15-alpine
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  # 2. Backend
+  backend:
+    build: ./backend
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - ./backend:/app # Con esto posibilitamos el hot reload (poner el código local en el contenedor)
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  # 3. Frontend
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80" # Mapeamos del puerto 80 del contenedor al 80 de la PC
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+# Definición de red y volumen
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
