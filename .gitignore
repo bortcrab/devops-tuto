@@ -180,3 +180,10 @@ venv/
 .env
 __pycache__/
 *.pyc
+
+# Ansible
+hosts.ini
+*.pem
+*.key
+*.ppk
+.vault_pass
